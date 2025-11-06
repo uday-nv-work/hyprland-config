@@ -13,8 +13,9 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
 		keyword decoration:blur:passes 0;\
         keyword general:gaps_in 0;\
         keyword general:gaps_out 0;\
-        keyword general:border_size 1;\
-        keyword decoration:rounding 2"
+        keyword general:border_size 3;\
+        keyword decoration:rounding 2;\
+        keyword decoration:dim_strength 0.35"
 
 	hyprctl keyword "windowrule opacity 1 override 1 override 1 override, ^(.*)$"
 	swww kill

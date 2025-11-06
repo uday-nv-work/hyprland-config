@@ -1,0 +1,45 @@
+[ids]
+046d:400d
+
+[main]
+capslock = toggle(vim)
+
+[vim]
+# Basic motions
+h = left
+j = down
+k = up
+l = right
+
+# Word motions
+w = C-right
+b = C-left
+e = C-right
+
+# Line motions
+0 = home
+4 = end
+
+# Document navigation
+g = layer(g_layer)  # Press g twice for gg
+shift = C-end       # G - go to bottom
+
+# Page navigation
+u = pageup
+d = pagedown
+
+# Search (universal Ctrl+F)
+/ = C-f
+
+# Tab navigation
+tab = tab
+s-tab = S-tab
+
+# Exit vim mode
+i = toggle(vim)
+esc = toggle(vim)
+a = toggle(vim)
+
+# g layer for gg (go to top)
+[g_layer]
+g = C-home
