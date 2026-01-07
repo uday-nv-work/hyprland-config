@@ -6,6 +6,11 @@
 # NOT necessary to do since this script is only designed to run only once as long as the marker exists
 # marker file is located at ~/.config/hypr/.initial_startup_done
 # However, I do highly suggest not to touch it since again, as long as the marker exist, script wont run
+float_switch_override_focus = 0
+
+exec-once = rdrop
+
+bind = $mainMod SHIFT, Q, exec, rdrop
 
 # Variables
 scriptsDir=$HOME/.config/hypr/scripts
