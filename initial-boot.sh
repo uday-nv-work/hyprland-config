@@ -36,12 +36,12 @@ if [ ! -f "$HOME/.config/hypr/.initial_startup_done" ]; then
 	fi
 
 	# initiate GTK dark mode and apply icon and cursor theme
-	gsettings set org.gnome.desktop.interface color-scheme $color_scheme >/dev/null 2>&1 &
-	gsettings set org.gnome.desktop.interface gtk-theme $gtk_theme >/dev/null 2>&1 &
-	gsettings set org.gnome.desktop.interface icon-theme $icon_theme >/dev/null 2>&1 &
-	gsettings set org.gnome.desktop.interface cursor-theme $cursor_theme >/dev/null 2>&1 &
-	gsettings set org.gnome.desktop.interface cursor-size 24 >/dev/null 2>&1 &
-
+	# gsettings set org.gnome.desktop.interface color-scheme $color_scheme >/dev/null 2>&1 &
+	# gsettings set org.gnome.desktop.interface gtk-theme $gtk_theme >/dev/null 2>&1 &
+	# gsettings set org.gnome.desktop.interface icon-theme $icon_theme >/dev/null 2>&1 &
+	# gsettings set org.gnome.desktop.interface cursor-theme $cursor_theme >/dev/null 2>&1 &
+	# gsettings set org.gnome.desktop.interface cursor-size 24 >/dev/null 2>&1 &
+	#
 	# NIXOS initiate GTK dark mode and apply icon and cursor theme
 	if [ -n "$(grep -i nixos </etc/os-release)" ]; then
 		gsettings set org.gnome.desktop.interface color-scheme "'$color_scheme'" >/dev/null 2>&1 &
