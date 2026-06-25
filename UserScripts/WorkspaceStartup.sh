@@ -1,8 +1,8 @@
 #!/bin/bash
 # Custom workspace startup script
-# Workspace 1: Teams PWA (Brave Profile 5 / intech)
-# Workspace 2: Ghostty
-# Workspace 3: Brave intech profile (Profile 5)
+# Workspace 1: Ghostty
+# Workspace 2: Brave intech profile (Profile 5)
+# Workspace 3: Teams PWA + Brave intech
 # Special  : kitty dropdown (launched from Startup_Apps.conf)
 
 # Wait for Hyprland to be fully ready
@@ -24,22 +24,22 @@ wait_for_app() {
     return 1
 }
 
-# Workspace 1: Teams PWA
-echo "Setting up Workspace 1 - Teams PWA"
+# Workspace 1: Ghostty
+echo "Setting up Workspace 1 - Ghostty"
 hyprctl dispatch workspace 1
-/opt/brave.com/brave/brave-browser "--profile-directory=Profile 5" --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo &
-sleep 2
-
-# Workspace 2: Ghostty
-echo "Setting up Workspace 2 - Ghostty"
-hyprctl dispatch workspace 2
 ghostty &
 wait_for_app "ghostty"
 
-# Workspace 3: Brave intech profile (regular browser window)
-echo "Setting up Workspace 3 - Brave (intech)"
+# Workspace 2: Brave intech profile
+echo "Setting up Workspace 2 - Brave (intech)"
+hyprctl dispatch workspace 2
+/opt/brave.com/brave/brave-browser "--profile-directory=Profile 5" &
+sleep 2
+
+# Workspace 3: Teams PWA + Brave intech
+echo "Setting up Workspace 3 - Teams PWA + Brave"
 hyprctl dispatch workspace 3
-/opt/brave.com/brave/brave-browser "--profile-directory=Profile 5" --disable-features=UseOzonePlatform,VizDisplayCompositor --disable-gpu --disable-software-rasterizer --force-device-scale-factor=1 --disable-dev-shm-usage --no-sandbox &
+/opt/brave.com/brave/brave-browser "--profile-directory=Profile 5" --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo &
 sleep 2
 
 # Return to workspace 1

@@ -33,7 +33,8 @@ if [ "$mode" = "full" ]; then
     "$UserScripts/WorkspaceStartup.sh" &
     hyprctl dispatch exec "[workspace special; size 75% 20%; move 12.5% 40] kitty" &
 else
-    # Minimal: just dropdown terminal in special workspace
+    # Minimal: dropdown terminal + wifi applet
+    nm-applet --indicator &
     hyprctl dispatch exec "[workspace special; size 75% 20%; move 12.5% 40] kitty" &
     hyprctl dispatch togglespecialworkspace &
 fi
